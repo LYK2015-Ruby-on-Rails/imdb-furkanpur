@@ -1,0 +1,104 @@
+<!-- Box -->
+<div class="box">
+
+  <h1><%= @movie.name %></h1>
+
+  <%= image_tag @movie.avatar.url(:medium) %>
+
+  <%= rating_for @movie, "rate", path: 'star_icons' %>
+
+  <p><strong>Categories:</strong>
+    <% @movie.categories.each do |cat| %>
+        <%= link_to cat.name, category_path(cat) %>
+    <% end %>
+  </p>
+
+  <p><strong>Name:</strong><%= @movie.name %></p>
+
+  <p><strong>Director:</strong>
+    <% @movie.directors.each do |dir| %>
+        <%= link_to dir.name, person_path(dir) %>
+    <% end %>
+  </p>
+
+  <p><strong>Description :</strong><%= @movie.desc %></p>
+
+  <p><strong>Rating :</strong> <%= @movie.rating %></p>
+
+  <p><strong>Release Date :</strong> <%= @movie.release_date %></p>
+
+  <p><strong>Runtime :</strong> <%= @movie.runtime %></p>
+
+  <p><strong>Language:</strong><%= @movie.language %></p>
+
+  <p><strong>Country :</strong><%= @movie.country %></p>
+
+  <p><strong>Budget :</strong> <%= @movie.budget %></p>
+
+  <p><strong>Official Site :</strong> <%= @movie.official_site %></p>
+
+  <div class="cl">&nbsp;</div>
+
+</div>
+
+<div class="box">
+
+  <h1>Actors</h1>
+
+  <ul>
+    <% @movie.actors.each do |act| %>
+        <li>
+          <%= image_tag act.avatar.url(:thumb) %>
+          <%= link_to act.name, person_path(act) %>
+        </li>
+    <% end %>
+  </ul>
+  <div class="cl">&nbsp;</div>
+</div>
+
+<div class="box">
+
+  <h1>Comments</h1>
+
+  <div class="playground">
+    <div class="buddycloud">
+      <div class="stream">
+
+        <article class="topic">
+
+          <div id="comment-movie">
+            <%= render @comments %>
+          </div>
+
+
+          <% if user_signed_in? %>
+              <section class="answer">
+                <div class="avatar">
+                  <%= image_tag current_user.avatar.url(:comment) %>
+                </div>
+
+                <%= form_for @comment, remote: true do |f| %>
+                    <%= f.hidden_field :commentable_id, value: @movie.id %>
+                    <%= f.hidden_field :commentable_type, value: "Movie" %>
+
+                    <%= f.text_area :comment %>
+                    <div class="control">
+                      <%= f.submit "Submit", class: "button small prominent" %>
+                    </div>
+                <% end %>
+
+
+          <% else %>
+              <div class="login-alert"><%= "Please sign in to comment !" %></div>
+          <% end %>
+
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cl">&nbsp;</div>
+
+</div>

@@ -1,0 +1,19 @@
+<!-- Box -->
+<div class="box">
+
+  <h1>People</h1>
+
+  <% @people.each do |person| %>
+      <!-- Movie -->
+      <div class="movie">
+        <div class="movie-image">
+          <span class="play"><span class="name"></span></span><%= image_tag person.avatar.url(:small) %>
+        </div>
+
+        <div class="movie-name"><%= link_to person.name, person_path(person) %>
+        </div>
+      </div>
+      <!-- end Movie -->
+  <% end %>
+  <div class="cl">&nbsp;</div>
+</div>

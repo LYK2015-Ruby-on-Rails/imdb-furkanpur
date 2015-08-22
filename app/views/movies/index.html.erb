@@ -1,0 +1,29 @@
+<!-- Box -->
+<div class="box">
+  <h1>MOVIES</h1>
+  <% @movies.each do |mov| %>
+      <!-- Movie -->
+      <div class="movie">
+        <div class="movie-image">
+          <a href="<%= movie_path(mov) %>"><span class="play"><span class="name"></span></span><%= image_tag mov.avatar.url(:small) %>
+          </a>
+        </div>
+
+        <div class="movie-name"><%= mov.name %></div>
+
+        <div class="rating">
+          <p>RATING</p>
+
+          <div class="stars">
+            <div class="stars-in">
+
+            </div>
+          </div>
+          <span class="comments">12</span>
+        </div>
+      </div>
+      <!-- end Movie -->
+  <% end %>
+
+  <div class="cl">&nbsp;</div>
+</div>

@@ -1,0 +1,45 @@
+<!-- Box -->
+<div class="box">
+  <h1><%= @person.name %>'s Biography</h1>
+
+  <%= image_tag @person.avatar.url(:medium) %>
+
+  <p><strong>Name:</strong><%= @person.name %></p>
+
+  <p><strong>Bio :</strong><%= @person.bio %></p>
+
+  <p><strong>Born :</strong> <%= @person.born %></p>
+
+  <p><strong>Country :</strong> <%= @person.country %></p>
+
+  <p><strong>Official Twitter :</strong> <%= @person.twitter %></p>
+
+  <p><strong>Official Site :</strong> <%= @person.official_site %></p>
+
+  <h1>Filmography</h1>
+
+  <% if @person.directed_movies.exists? %>
+      <h2>Directed Movies</h2>
+      <ul>
+        <% @person.directed_movies.each do |mov| %>
+            <li>
+              <%= image_tag mov.avatar.url(:small) %>
+              <%= link_to mov.name, movie_path(mov) %>
+            </li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <% if @person.acted_movies.exists? %>
+      <h2>Acted Movies</h2>
+      <ul>
+        <% @person.acted_movies.each do |mov| %>
+            <li>
+              <%= image_tag mov.avatar.url(:small) %>
+              <%= link_to mov.name, movie_path(mov) %>
+            </li>
+        <% end %>
+      </ul>
+  <% end %>
+  <div class="cl">&nbsp;</div>
+</div>

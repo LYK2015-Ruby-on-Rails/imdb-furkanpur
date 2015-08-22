@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  desc: MyString
+  rating: 1
+  release_date: 2015-08-19 16:00:09
+  runtime: 1
+  language: MyString
+  country: MyString
+  official_site: MyString
+  budget: 1
+
+two:
+  name: MyString
+  desc: MyString
+  rating: 1
+  release_date: 2015-08-19 16:00:09
+  runtime: 1
+  language: MyString
+  country: MyString
+  official_site: MyString
+  budget: 1

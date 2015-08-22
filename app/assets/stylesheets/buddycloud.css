@@ -1,0 +1,343 @@
+.buddycloud {
+    padding: 21px;
+    font: 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.buddycloud h1 {
+    text-align: center;
+}
+
+.buddycloud .stream {
+    margin: auto;
+    width: 80%;
+    border-radius: 5px;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.buddycloud article {
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.buddycloud section {
+    border-left: 1px solid rgba(0, 0, 0, 0.13);
+    border-right: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.buddycloud article:first-child > section:first-child {
+    border-radius: 5px 5px 0 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.buddycloud article:last-child {
+    border-bottom: none;
+}
+
+.buddycloud article:last-child > section:last-child {
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 0 -1px white, 0 3px 0 -1px rgba(0, 0, 0, 0.08);
+}
+
+.button.small, button.small {
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    font-size: 11px;
+    line-height: 20px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px
+}
+
+.button.callToAction, button.callToAction {
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.13);
+    border-color: rgba(0, 0, 0, 0.34);
+    border-bottom-color: rgba(0, 0, 0, 0.55);
+    background: #83ac35;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.button.callToAction:hover, button.callToAction:hover {
+    background: lighter(#83ac35, 13%)
+}
+
+.button.prominent, button.prominent {
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.13);
+    border-color: rgba(0, 0, 0, 0.34);
+    border-bottom-color: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.89);
+    box-shadow: 0 1px rgba(255, 255, 255, 0.21) inset, 0 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.21) inset, 0 1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 1px rgba(255, 255, 255, 0.21) inset, 0 1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 1px rgba(255, 255, 255, 0.21) inset, 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px rgba(255, 255, 255, 0.21) inset, 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.button.prominent:hover, button.prominent:hover {
+    background: #000
+}
+
+.button.danger, button.danger {
+    color: #fff;
+    text-shadow: 0 1px #600;
+    background: #f00;
+}
+
+.button.danger:hover, button.danger:hover {
+    background: #f00
+}
+
+.button.translucid, button.translucid, .button.translucid:hover, button.translucid:hover {
+    background: none
+}
+
+.button.checkbox, button.checkbox {
+    padding-left: 2px
+}
+
+.buddycloud .controls {
+    bottom: 13px;
+    right: 13px;
+    font-size: 11px;
+    position: absolute;
+}
+
+.buddycloud .controls .button {
+    margin-left: 3px
+}
+
+.buddycloud .postmeta {
+    float: right;
+    margin: 0 0 0 13px;
+    text-align: right;
+}
+
+.buddycloud .postmeta nav {
+    visibility: hidden
+}
+
+.buddycloud .postmeta span {
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 11.5px;
+    line-height: 19.5px;
+}
+
+.buddycloud .postmeta span.time {
+    display: block;
+    color: rgba(0, 0, 0, 0.34)
+}
+
+.buddycloud .name {
+    color: black;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.buddycloud .name + .location {
+    margin-left: 5px;
+    font-size: 11px;
+    line-height: 19.5px;
+    color: rgba(0, 0, 0, 0.34)
+}
+
+.buddycloud .opener:hover nav, .buddycloud .comment:hover nav {
+    visibility: visible;
+}
+
+.buddycloud p {
+    margin: 2px 0 0;
+    color: black;
+}
+
+.buddycloud .answer {
+    position: relative;
+    overflow: hidden;
+}
+
+.buddycloud .answer textarea {
+    margin-top: 13px;
+    padding: 4px 5px 2px;
+    height: 28px;
+    width: 100%;
+    font: 12px/18px sans-serif;
+    color: #808080;
+    border: 1px solid rgba(0, 0, 0, 0.21);
+    box-shadow: 1px 1px #fff, inset 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 1px 1px #fff, inset 1px 1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 1px 1px #fff, inset 1px 1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 1px 1px #fff, inset 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 1px #fff, inset 1px 1px rgba(0, 0, 0, 0.05);
+    position: relative;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.buddycloud .answer .avatar {
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    left: 23px;
+    top: 13px;
+    display: none
+}
+
+.buddycloud .answer .controls {
+    bottom: 13px;
+    display: none
+}
+
+.buddycloud .answer.write .avatar {
+    display: block
+}
+
+.buddycloud .answer.write textarea {
+    margin-bottom: 34px;
+    height: 40px;
+    color: #000;
+    resize: vertical
+}
+
+.buddycloud .answer.write .controls {
+    display: block
+}
+
+.buddycloud .postcontent {
+    white-space: pre-wrap;
+    word-wrap: break-word
+}
+
+.buddycloud .controls {
+    bottom: 13px;
+    right: 13px;
+    font-size: 11px;
+    position: absolute;
+}
+
+.buddycloud .controls .button {
+    margin-left: 3px
+}
+
+.buddycloud .controls .postError {
+    margin-left: 5px;
+    color: #f00;
+    display: inline-block
+}
+
+.buddycloud .message {
+    min-height: 14px;
+    padding-left: 66px;
+    color: rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+}
+
+.buddycloud .message.new {
+    background-color: rgba(0, 0, 0, 0.08)
+}
+
+.buddycloud .message.selected {
+    color: #517312;
+    background: #abe245;
+}
+
+.buddycloud .message.selected .location, .buddycloud .message.selected .time {
+    color: rgba(81, 115, 18, 0.55)
+}
+
+.buddycloud .message:last-child {
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none
+}
+
+.buddycloud .message .avatar {
+    width: 40px
+}
+
+.buddycloud .message p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.buddycloud .opener {
+    min-height: 50px;
+    padding: 13px 13px 13px 76px;
+}
+
+.buddycloud .avatar {
+    left: 14px;
+    position: absolute;
+}
+
+.buddycloud section {
+    background-color: white;
+}
+
+.buddycloud .comment {
+    min-height: 40px;
+    position: relative
+}
+
+.buddycloud .comment, .buddycloud .answer {
+    padding: 5px 13px 5px 76px;
+}
+
+.buddycloud .answer {
+    padding-top: 0;
+}
+
+.buddycloud .answer:first-child {
+    padding-left: 50px;
+}
+
+.buddycloud .answer:first-child.write .avatar {
+    top: 13px;
+    left: -2px
+}
+
+.buddycloud .answer:first-child textarea {
+    margin-top: 8px;
+    width: 399px
+}
+
+.buddycloud .comment .avatar {
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    top: 8px;
+    left: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}

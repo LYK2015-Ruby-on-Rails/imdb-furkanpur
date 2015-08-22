@@ -1,0 +1,15 @@
+<!-- Box -->
+<div class="box">
+  <h1><%= @category.name %> Movies</h1>
+
+  <ul>
+    <% @category.movies.each do |mov| %>
+        <li>
+          <%= image_tag mov.avatar.url(:small) %>
+          <%= link_to mov.name, movie_path(mov) %>
+        </li>
+    <% end %>
+  </ul>
+
+  <div class="cl">&nbsp;</div>
+</div>

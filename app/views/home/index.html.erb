@@ -1,0 +1,40 @@
+<% @categories.first(3).each do |cat| %>
+    <!-- Box -->
+    <div class="box">
+
+      <div class="head">
+        <h2><%= cat.name %></h2>
+
+        <p class="text-right"><%= link_to 'See all', category_path(cat) %></p>
+      </div>
+
+      <% cat.movies.first(6).each do |mov| %>
+          <!-- Movie -->
+          <div class="movie
+            <% if mov == cat.movies.last %><%= "last" %>
+            <% end %>">
+
+            <div class="movie-image">
+              <a href="<%= movie_path(mov) %>"><span class="play"><span class="name"></span></span><%= image_tag mov.avatar.url(:small) %>
+              </a>
+            </div>
+
+            <div class="movie-name"><%= mov.name %></div>
+
+            <div class="rating">
+              <p>RATING</p>
+
+              <div class="stars">
+                <div class="stars-in">
+                </div>
+              </div>
+              <span class="comments">12</span>
+            </div>
+          </div>
+          <!-- end Movie -->
+      <% end %>
+      <div class="cl">&nbsp;</div>
+    </div>
+<% end %>
+
+

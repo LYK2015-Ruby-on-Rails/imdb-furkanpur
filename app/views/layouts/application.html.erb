@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IMDb - Internet Movies Database</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- Shell -->
+<div id="shell">
+  <!-- Header -->
+  <div id="header">
+    <h1 id="logo"><a href="<%= root_path %>">Movie Hunter</a></h1>
+
+    <div class="social">
+      <span>FOLLOW US ON:</span>
+      <ul>
+        <li><a class="twitter" href="#">twitter</a></li>
+        <li><a class="facebook" href="#">facebook</a></li>
+        <li><a class="vimeo" href="#">vimeo</a></li>
+        <li><a class="rss" href="#">rss</a></li>
+      </ul>
+
+
+      <% if user_signed_in? %>
+          <%= link_to 'Edit Profile', edit_user_registration_path %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+          <%= link_to "Sign In", user_session_path %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+
+      <% end %>
+    </div>
+
+    <!-- Navigation -->
+    <div id="navigation">
+      <ul>
+        <li><a class="active" href="<%= root_path %>">HOME</a></li>
+        <li><a href="<%= categories_path %>">CATEGORIES</a></li>
+        <li><a href="<%= movies_path %>">MOVIES</a></li>
+        <li><a href="<%= people_path %>">ACTORS</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">ADVERTISE</a></li>
+      </ul>
+    </div>
+    <!-- end Navigation -->
+
+    <!-- Sub-menu -->
+    <div id="sub-navigation">
+      <ul>
+        <li><a href="#">SHOW ALL</a></li>
+        <li><a href="#">LATEST TRAILERS</a></li>
+        <li><a href="#">TOP RATED</a></li>
+        <li><a href="#">MOST COMMENTED</a></li>
+      </ul>
+      <div id="search">
+        <form action="home_submit" method="get" accept-charset="utf-8">
+          <label for="search-field">SEARCH</label>
+          <input type="text" name="search field" value="Enter search here" id="search-field" title="Enter search here" class="blink search-field"/>
+          <input type="submit" value="GO!" class="search-button"/>
+        </form>
+      </div>
+    </div>
+    <!-- end Sub-Menu -->
+
+  </div>
+  <!-- end Header -->
+
+  <!-- Main -->
+  <div id="main">
+    <!-- Content -->
+    <div id="content">
+      <p class="notice"><%= notice %></p>
+
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+
+
+      <!-- end Box -->
+
+
+    </div>
+    <!-- end Content -->
+
+    <!-- NEWS -->
+    <div id="news">
+      <div class="head">
+        <h3>NEWS</h3>
+
+        <p class="text-right"><a href="#">See all</a></p>
+      </div>
+
+      <div class="content">
+        <p class="date">12.04.09</p>
+        <h4>Disney's A Christmas Carol</h4>
+
+        <p>&quot;Disney's A Christmas Carol,&quot; a multi-sensory thrill ride re-envisioned by Academy Award&reg;-winning
+          filmmaker Robert Zemeckis, captures... </p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="content">
+        <p class="date">11.04.09</p>
+        <h4>Where the Wild Things Are</h4>
+
+        <p>Innovative director Spike Jonze collaborates with celebrated author Maurice Sendak to bring one of the most
+          beloved books of all time to the big screen in &quot;Where the Wild Things Are,&quot;...</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="content">
+        <p class="date">10.04.09</p>
+        <h4>The Box</h4>
+
+        <p>Norma and Arthur Lewis are a suburban couple with a young child who receive an anonymous gift bearing fatal
+          and irrevocable consequences.</p>
+        <a href="#">Read more</a>
+      </div>
+    </div>
+    <!-- end NEWS -->
+
+    <!-- Coming -->
+    <div id="coming">
+      <div class="head">
+        <h3>COMING SOON<strong>!</strong></h3>
+
+        <p class="text-right"><a href="#">See all</a></p>
+      </div>
+      <div class="content">
+        <h4>The Princess and the Frog </h4>
+        <a href="#"><img src="<%= image_url "coming-soon1.jpg" %>" alt="coming soon"/></a>
+
+        <p>Walt Disney Animation Studios presents the musical "The Princess and the Frog," an animated comedy set in the
+          great city of New Orleans...</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="cl">&nbsp;</div>
+      <div class="content">
+        <h4>The Princess and the Frog </h4>
+        <a href="#"><img src="<%= image_url "coming-soon2.jpg" %>" alt="coming soon"/></a>
+
+        <p>Walt Disney Animation Studios presents the musical "The Princess and the Frog," an animated comedy set in the
+          great city of New Orleans...</p>
+        <a href="#">Read more</a>
+      </div>
+
+    </div>
+    <!-- end Coming -->
+    <div class="cl">&nbsp;</div>
+  </div>
+  <!-- end Main -->
+
+  <!-- Footer -->
+  <div id="footer">
+    <p>
+      <a href="#">HOME</a> <span>|</span>
+      <a href="#">NEWS</a> <span>|</span>
+      <a href="#">IN THEATERS</a> <span>|</span>
+      <a href="#">COMING SOON </a> <span>|</span>
+      <a href="#">LATERS TRAILERS</a> <span>|</span>
+      <a href="#">TOP RATED TRAILERS</a> <span>|</span>
+      <a href="#">MOST COMMENTED TRAILERS</a> <span>|</span>
+      <a href="#">ADVERTISE</a> <span>|</span>
+      <a href="#">CONTACT </a>
+    </p>
+
+    <p> &copy; 2009 Movie Hunter, LLC. All Rights Reserved. Designed by
+      <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">ChocoTemplates.com</a>
+    </p>
+  </div>
+  <!-- end Footer -->
+</div>
+<!-- end Shell -->
+
+
+</div>
+</body>
+</html>

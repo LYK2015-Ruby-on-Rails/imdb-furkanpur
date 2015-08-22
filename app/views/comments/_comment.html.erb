@@ -1,0 +1,9 @@
+<section class = "comment">
+      <div class="avatar"><%= image_tag comment.user.avatar.url(:comment) %></div>
+      <div class="postmeta">
+        <span class="time"><%= time_ago_in_words(comment.created_at) %> ago</span>
+      </div>
+      <span class="name"><%= comment.user.email %></span><span class="location">from Ankara</span>
+
+      <p><%= comment.comment %></p>
+    </section>
